@@ -1,7 +1,7 @@
 {
   "version": 1,
   "projects": {
-    "helloapp": {
+    "purchaseapp": {
       "projectType": "application",
       "root": "",
       "sourceRoot": "src",
@@ -9,7 +9,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/helloapp",
+            "outputPath": "dist/purchaseapp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -20,14 +20,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "helloapp:build"
+            "browserTarget": "purchaseapp:build"
           }
         }
       }
     }
   },
-  "defaultProject": "helloapp",
+  "defaultProject": "purchaseapp",
   "cli": {
-    "analytics": false
+    "analytics": "61036315-41ff-416a-b2ef-1c3a0a641292"
   }
 }
