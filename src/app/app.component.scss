@@ -1,0 +1,45 @@
+h1 {
+    color: #bbb;
+    font-size: 4em;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.stave-wrapper {
+    position: relative;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 1300px;
+    height: 440px;
+    background-image: url('stave.png');
+    background-repeat: no-repeat;
+}
+
+.oval {
+	width: 50px;
+	height: 25px;
+    background: #000;
+    border: 2px solid #eee;
+    position: absolute;
+    left: 360px;
+    top: 131px;
+	-moz-border-radius: 25px / 12.5px;
+	-webkit-border-radius: 25px / 12.5px;
+	border-radius: 25px / 12.5px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    .btn {
+        padding: 5px 20px;
+        margin: 0 10px;
+        font-size: 2em;
+        font-weight: 900;
+    }
+}

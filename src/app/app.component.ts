@@ -15,49 +15,13 @@ class Item{
  
 @Component({
     selector: 'purchase-app',
-    template: `<div class="page-header">
-        <h1> Список покупок </h1>
-    </div>
-    <div class="panel">
-        <div class="form-inline">
-            <div class="form-group">
-                <div class="col-md-8">
-                    <input class="form-control" [(ngModel)]="text" placeholder = "Название" />
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-6">
-                    <input type="number" class="form-control" [(ngModel)]="price" placeholder="Цена" />
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-8">
-                    <button class="btn btn-default" (click)="addItem(text, price)">Добавить</button>
-                </div>
-            </div>
-        </div>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Предмет</th>
-                    <th>Цена</th>
-                    <th>Куплено</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of items">
-                    <td>{{item.purchase}}</td>
-                    <td>{{item.price}}</td>
-                    <td><input type="checkbox" [(ngModel)]="item.done" /></td>
-                    <td><button class="btn btn-danger" (click)="deleteItem(item)">Удалить</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>`
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent { 
     text: string;
     price: number = 0;
+    clickCount: number = 0;
      
     items: Item[] = 
     [
@@ -74,5 +38,11 @@ export class AppComponent {
     }
     deleteItem(item: Item): void {
         this.items = this.items.filter(i => i !== item);
+    }
+    click(): void {
+        this.clickCount++;
+    }
+    resetClicks(): void {
+        this.clickCount = 0;
     }
 }
