@@ -1,64 +1,22 @@
 <div class="page-header">
-    <h1> Угадай ноту! </h1>
+    <h1>
+        <span>Угадай ноту!</span>
+        <span *ngIf="isGameOn" [ngClass]="indicatorClassName">{{score}}</span>
+    </h1>
+    <p *ngIf="isGameOn">{{timer}}</p>
+    <p>
+        <button class="btn btn-success" (click)="startGame(5)" *ngIf="!isGameOn">Начать игру</button>
+        <button class="btn btn-success" (click)="stopGame()" *ngIf="isGameOn">Остановить игру</button>
+    </p>
+    <p>{{resultText}}</p>
 </div>
 
-<div class="stave-wrapper">
-    <div class="oval"></div>
+<div class="stave-wrapper" *ngIf="isGameOn">
+    <div [ngClass]="currentNote.className"></div>
 </div>
 
 <div class="controls">
-    <ul class="controls">
-        <li class="btn btn-default">До</li>
-        <li class="btn btn-default">Ре</li>
-        <li class="btn btn-default">Ми</li>
-        <li class="btn btn-default">Фа</li>
-        <li class="btn btn-default">Соль</li>
-        <li class="btn btn-default">Ля</li>
-        <li class="btn btn-default">Си</li>
+    <ul class="controls" *ngIf="isGameOn">
+        <li class="btn btn-default" *ngFor="let notename of notenames" (click)="changeNote(notename)">{{notename}}</li>
     </ul>
 </div>
-
-<!-- <div class="page-header">
-    <h1> Список покупок </h1>
-</div>
-<div class="panel">
-    <div class="form-inline">
-        <div class="form-group">
-            <div class="col-md-8">
-                <input class="form-control" [(ngModel)]="text" placeholder = "Название" />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-6">
-                <input type="number" class="form-control" [(ngModel)]="price" placeholder="Цена" />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-8">
-                <button class="btn btn-default" (click)="addItem(text, price)">Добавить</button>
-            </div>
-        </div>
-    </div>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Предмет</th>
-                <th>Цена</th>
-                <th>Куплено</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of items">
-                <td>{{item.purchase}}</td>
-                <td>{{item.price}}</td>
-                <td><input type="checkbox" [(ngModel)]="item.done" /></td>
-                <td><button class="btn btn-danger" (click)="deleteItem(item)">Удалить</button></td>
-            </tr>
-        </tbody>
-    </table>
-    <div>
-        <p>Количество кликов {{clickCount}}</p>
-        <button class="btn btn-default" (click)="click()">Клик!</button>
-        <button class="btn btn-default" (click)="resetClicks()">Обнулить количество кликов!</button>
-    </div>
-</div> -->

@@ -4,6 +4,15 @@ h1 {
     font-weight: 900;
     display: flex;
     justify-content: center;
+    margin: 0 auto 20px;
+}
+
+p {
+    color: blue;
+    font-size: 3em;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
     margin: auto;
 }
 
@@ -20,13 +29,13 @@ h1 {
 }
 
 .oval {
+    position: relative;
 	width: 50px;
 	height: 25px;
     background: #000;
     border: 2px solid #eee;
     position: absolute;
     left: 360px;
-    top: 131px;
 	-moz-border-radius: 25px / 12.5px;
 	-webkit-border-radius: 25px / 12.5px;
 	border-radius: 25px / 12.5px;
@@ -43,3 +52,121 @@ h1 {
         font-weight: 900;
     }
 }
+
+._c1 {
+    top: 183px;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 85px;
+        height: 4px;
+        top: 8px;
+        left: -18px;
+        background: #000;
+    }
+}
+
+._d1 {
+    top: 170px;
+}
+
+._e1 {
+    top: 157px;
+}
+
+._f1 {
+    top: 144px;
+}
+
+._g1 {
+    top: 131px;
+}
+
+._a1 {
+    top: 119px;
+}
+
+._h1 {
+    top: 106px;
+}
+
+._c2 {
+    top: 94px;
+}
+
+._d2 {
+    top: 81px;
+}
+
+._e2 {
+    top: 69px;
+}
+
+._f2 {
+    top: 56px;
+}
+
+._g2 {
+    top: 44px;
+}
+
+._a2 {
+    top: 31px;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 85px;
+        height: 4px;
+        top: 9px;
+        left: -18px;
+        background: #000;
+    }
+}
+
+._h2 {
+    top: 20px;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 85px;
+        height: 4px;
+        top: 20px;
+        left: -18px;
+        background: #000;
+    }
+}
+
+._c3 {
+    top: 5px;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 85px;
+        height: 4px;
+        top: 9px;
+        left: -18px;
+        background: #000;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        width: 85px;
+        height: 4px;
+        top: 35px;
+        left: -18px;
+        background: #000;
+    }
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: blue;
+}
+
